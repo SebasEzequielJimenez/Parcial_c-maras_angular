@@ -1,0 +1,12 @@
+.content {
+  padding-top: 5rem;
+  min-height: calc(100vh - 120px);
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--background-darker-color);
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+}

@@ -1,0 +1,65 @@
+.catalogo-container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtros-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.filtros-bar button {
+  background-color: var(--background-darker-color);
+  border: 1.5px solid var(--font-color);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.filtros-bar button.active {
+  color: var(--accent-color) !important;
+  font-weight: bold;
+  border-color: var(--accent-color);
+  background-color: var(--background-lighter-color);
+}
+
+.lista-camaras {
+  list-style: none;
+  padding: 0;
+}
+
+.item-camara {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--background-darker-color);
+}
+
+.info {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.btn-ver {
+  background-color: var(--background-lighter-color);
+  border: 1.5px solid var(--font-color);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-ver:hover {
+  background-color: var(--background-darker-color);
+}

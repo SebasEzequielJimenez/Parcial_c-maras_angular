@@ -1,0 +1,56 @@
+.detalles-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.card-detalles {
+  border: 2px solid var(--font-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--background-lighter-color);
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.3rem;
+}
+
+.desc {
+  font-size: 1.05rem;
+  max-width: 450px;
+  margin: 0 auto 1.2rem;
+}
+
+.oferta-badge {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.btn-action {
+  padding: 0.5rem 1.8rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--font-color);
+  background-color: var(--background-darker-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.seccion-edicion {
+  margin-top: 2rem;
+}

@@ -1,0 +1,78 @@
+<div class="form-container">
+  <h2>{{ camaraEditar() ? 'Editando Cámara' : 'Agregar Cámaras' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <div class="label-row">
+        <label>Modelo</label>
+        @if (form.controls.modelo.touched && form.controls.modelo.hasError('required')) {
+          <span class="error-msg">El modelo es requerido</span>
+        }
+      </div>
+      <input type="text" formControlName="modelo" placeholder="Nikon D7500" />
+    </div>
+
+    <div class="field">
+      <div class="label-row">
+        <label>Tipo</label>
+        @if (form.controls.tipo.touched && form.controls.tipo.hasError('required')) {
+          <span class="error-msg">El tipo es requerido</span>
+        }
+      </div>
+      <select formControlName="tipo">
+        <option value="" disabled>Seleccione Tipo de cámara</option>
+        @for (t of tipos; track t) {
+          <option [value]="t">{{ t }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="field">
+      <div class="label-row">
+        <label>Resolución en megapíxeles</label>
+        @if (form.controls.resolucion.touched) {
+          @if (form.controls.resolucion.hasError('required')) {
+            <span class="error-msg">La resolución es requerida</span>
+          } @else if (form.controls.resolucion.hasError('min')) {
+            <span class="error-msg">La resolución mínima es de 12 megapíxeles</span>
+          } @else if (form.controls.resolucion.hasError('max')) {
+            <span class="error-msg">La resolución máxima es de 99 megapíxeles</span>
+          }
+        }
+      </div>
+      <input type="number" formControlName="resolucion" />
+    </div>
+
+    <div class="field">
+      <div class="label-row">
+        <label>Stock</label>
+        @if (form.controls.stock.touched) {
+          @if (form.controls.stock.hasError('required')) {
+            <span class="error-msg">El stock es requerido</span>
+          } @else if (form.controls.stock.hasError('min')) {
+            <span class="error-msg">El stock no puede ser negativo</span>
+          }
+        }
+      </div>
+      <input type="number" formControlName="stock" />
+    </div>
+
+    <div class="field">
+      <label>Descripción</label>
+      <textarea formControlName="descripcion" rows="4" placeholder="Creada a partir del deseo de contar con..."></textarea>
+      @if (form.controls.descripcion.hasError('maxlength')) {
+        <span class="error-msg">Máximo 200 caracteres</span>
+      }
+    </div>
+
+    <div class="field-checkbox">
+      <label>En promoción</label>
+      <input type="checkbox" formControlName="enOferta" />
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="btn-borrar" (click)="onReset()">Borrar</button>
+      <button type="submit" class="btn-enviar" [disabled]="form.invalid">Enviar</button>
+    </div>
+  </form>
+</div>

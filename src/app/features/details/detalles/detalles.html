@@ -1,0 +1,34 @@
+<div class="detalles-container">
+  @if (camara(); as item) {
+    <div class="card-detalles">
+      <h2>{{ item.modelo }}</h2>
+
+      <h3>Descripción:</h3>
+      <p class="desc">{{ item.descripcion || 'Sin descripción disponible.' }}</p>
+
+      <h3>Especificaciones:</h3>
+      <p>Tipo: {{ item.tipo }}</p>
+      <p>Resolución: {{ item.resolucion }}Mpx</p>
+      <p>Stock disponible: {{ item.stock }}</p>
+
+      @if (item.enOferta) {
+        <h3 class="oferta-badge">En promoción!!</h3>
+      }
+      <div class="acciones">
+        <button class="btn-action" (click)="toggleEditar()">Editar</button>
+        <button class="btn-action" (click)="onBorrar(item.id!)">Borrar</button>
+      </div>
+    </div>
+
+    @if (modoEdicion()) {
+      <div class="seccion-edicion">
+        <app-formulario 
+          [camaraEditar]="item" 
+          (guardado)="onActualizado($event)">
+        </app-formulario>
+      </div>
+    }
+  } @else {
+    <p>Cargando detalles de la cámara...</p>
+  }
+</div>

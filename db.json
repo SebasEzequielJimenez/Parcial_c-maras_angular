@@ -1,0 +1,41 @@
+{
+  "cameras": [
+    {
+      "modelo": "Canon EOS 90D",
+      "tipo": "DSLR",
+      "resolucion": 32.5,
+      "stock": 9,
+      "descripcion": "Cámara Réflex con sensor APS-C de alto rendimiento.",
+      "enOferta": false,
+      "id": "c101"
+    },
+    {
+      "id": "c102",
+      "modelo": "Canon EOS R5",
+      "tipo": "Mirrorless",
+      "resolucion": 45,
+      "stock": 5,
+      "descripcion": "Cámara profesional Full Frame con grabación de video 8K.",
+      "enOferta": true
+    },
+    {
+      "id": "c103",
+      "modelo": "Fujifilm X100V",
+      "tipo": "Compacta",
+      "resolucion": 26.1,
+      "stock": 3,
+      "descripcion": "Cámara compacta de diseño retro con lente fijo de 23mm.",
+      "enOferta": false
+    },
+    {
+      "id": "c104",
+      "modelo": "Sony Alpha a7 IV",
+      "tipo": "Mirrorless",
+      "resolucion": 33,
+      "stock": 12,
+      "descripcion": "Sensor CMOS Exmor R retroiluminado con enfoque híbrido rápido.",
+      "enOferta": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

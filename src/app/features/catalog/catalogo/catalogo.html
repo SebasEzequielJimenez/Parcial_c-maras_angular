@@ -1,0 +1,29 @@
+<div class="catalogo-container">
+  <h1>Nuestras Cámaras</h1>
+
+  <div class="filtros-bar">
+    <button [class.active]="filtroActivo() === 'Todas'" (click)="setFiltro('Todas')">
+      Todas los tipos
+    </button>
+    <button [class.active]="filtroActivo() === 'Mirrorless'" (click)="setFiltro('Mirrorless')">
+      Mirrorless
+    </button>
+    <button [class.active]="filtroActivo() === 'DSLR'" (click)="setFiltro('DSLR')">
+      DSLR
+    </button>
+    <button [class.active]="filtroActivo() === 'Compacta'" (click)="setFiltro('Compacta')">
+      Compacta
+    </button>
+  </div>
+
+  <ul class="lista-camaras">
+    @for (item of listaFiltrada(); track item.id) {
+      <li class="item-camara">
+        <span class="info">{{ item.modelo }} | {{ item.tipo }} | {{ item.resolucion }}Mpx</span>
+        <button class="btn-ver" (click)="verMas(item.id!)">Ver más →</button>
+      </li>
+    } @empty {
+      <p>No se encontraron cámaras para este filtro.</p>
+    }
+  </ul>
+</div>
